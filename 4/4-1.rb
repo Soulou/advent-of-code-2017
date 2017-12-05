@@ -7,13 +7,12 @@ valids = 0
 input.each_line do |line|
   line = line.split(" ").sort
   len = line.length
-  Rk = true
+  ok = true
 
   line.each_with_index do |word, i|
     p = line[i-1] if i > 0
-    n = line[i+1] unless i == len - 1
 
-    if word == p || word == n
+    if word == p
       ok = false
       break
     end
